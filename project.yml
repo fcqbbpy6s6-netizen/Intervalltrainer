@@ -1,0 +1,45 @@
+name: Intervalltrainer
+
+options:
+  bundleIdPrefix: de.intervalltrainer
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: de
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+packages:
+  IntervalCore:
+    path: Packages/IntervalCore
+
+targets:
+  Intervalltrainer:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: App
+    dependencies:
+      - package: IntervalCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: de.intervalltrainer.app
+        PRODUCT_NAME: Intervalltrainer
+        INFOPLIST_FILE: Config/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: "NO"
+        # Die App wird unsigniert gebaut und erst von Sideloadly signiert.
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_IDENTITY: ""
+        DEVELOPMENT_TEAM: ""
+    scheme:
+      gatherCoverageData: false

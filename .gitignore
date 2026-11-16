@@ -1,0 +1,16 @@
+# Wird von XcodeGen erzeugt
+*.xcodeproj
+*.xcworkspace
+
+# Build-Ausgaben
+build/
+Payload/
+*.ipa
+DerivedData/
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS und Xcode
+.DS_Store
+xcuserdata/
